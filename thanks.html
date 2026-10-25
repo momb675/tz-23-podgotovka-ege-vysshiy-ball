@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Заявка принята — Высший балл</title>
+  <meta name="description" content="Спасибо! Ваша заявка на пробный ЕГЭ 13 декабря 2026 принята. Что взять с собой и как связаться с центром.">
+  <meta property="og:title" content="Заявка принята — Высший балл">
+  <meta property="og:description" content="Заявка на пробный ЕГЭ принята.">
+  <meta property="og:image" content="https://example.vercel.app/img/og-cover.jpg">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX');
+  </script>
+</head>
+<body>
+
+  <header class="header">
+    <div class="container header__inner">
+      <a href="index.html" class="header__logo"><img src="img/logo.svg" alt="Высший балл" width="120" height="40"></a>
+      <nav class="header__nav" aria-label="Основное меню">
+        <a href="index.html" class="header__link">Главная</a>
+        <a href="subjects.html" class="header__link">Предметы</a>
+        <a href="teachers.html" class="header__link">Преподаватели</a>
+        <a href="results.html" class="header__link">Результаты</a>
+        <a href="prices.html" class="header__link">Цены</a>
+        <a href="contacts.html" class="header__link">Контакты</a>
+      </nav>
+      <a href="tel:+74951234567" class="header__phone" data-event="contact_click" data-contact-type="phone">+7 (495) 123-45-67</a>
+      <button class="header__burger" aria-label="Открыть меню">☰</button>
+    </div>
+  </header>
+
+  <section class="section">
+    <div class="container">
+      <h1>Спасибо! Заявка принята</h1>
+      <p>Мы свяжемся с вами в течение рабочего дня, чтобы подтвердить участие в пробном ЕГЭ 13 декабря 2026 года.</p>
+
+      <div class="card mt-24">
+        <h2 class="card__title">Номер вашей заявки</h2>
+        <p id="request-id" style="font-size:24px;font-weight:700;color:var(--blue);margin:8px 0">—</p>
+        <p class="card__text mb-0">Сохраните этот номер — он понадобится при обращении к методисту.</p>
+      </div>
+
+      <div class="card mt-16">
+        <h2 class="card__title">Что взять на пробник</h2>
+        <ul>
+          <li>Паспорт</li>
+          <li>Чёрную гелевую ручку</li>
+          <li>Хорошее настроение и готовность проверить себя</li>
+        </ul>
+      </div>
+
+      <div class="card mt-16">
+        <h2 class="card__title">Следите за новостями</h2>
+        <div class="footer__social" style="margin-top:12px">
+          <a href="https://instagram.com/vysshiy_ball_ege" target="_blank" rel="noopener" style="background:var(--light);color:var(--graphite)" data-event="social_click" data-network="instagram" data-page-section="thanks">Instagram</a>
+          <a href="https://vk.com/vysshiy_ball" target="_blank" rel="noopener" style="background:var(--light);color:var(--graphite)" data-event="social_click" data-network="vk" data-page-section="thanks">ВКонтакте</a>
+          <a href="https://t.me/vysshiy_ball" target="_blank" rel="noopener" style="background:var(--light);color:var(--graphite)" data-event="social_click" data-network="telegram" data-page-section="thanks">Telegram</a>
+          <a href="https://youtube.com/@vysshiy_ball" target="_blank" rel="noopener" style="background:var(--light);color:var(--graphite)" data-event="social_click" data-network="youtube" data-page-section="thanks">YouTube</a>
+        </div>
+      </div>
+
+      <p class="mt-24">
+        <a href="index.html" class="btn btn--outline">На главную</a>
+      </p>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div><h4 class="footer__title">Высший балл</h4><p>Центр подготовки к ЕГЭ и ОГЭ с 2017 года.</p></div>
+      <div><h4 class="footer__title">Контакты</h4><p><a href="tel:+74951234567" data-event="contact_click" data-contact-type="phone">+7 (495) 123-45-67</a><br><a href="mailto:nabor@vysshiy-ball.example" data-event="contact_click" data-contact-type="email">nabor@vysshiy-ball.example</a></p></div>
+      <div><h4 class="footer__title">Соцсети</h4>
+        <div class="footer__social">
+          <a href="https://instagram.com/vysshiy_ball_ege" target="_blank" rel="noopener" data-event="social_click" data-network="instagram" data-page-section="footer">Instagram</a>
+          <a href="https://vk.com/vysshiy_ball" target="_blank" rel="noopener" data-event="social_click" data-network="vk" data-page-section="footer">ВКонтакте</a>
+          <a href="https://t.me/vysshiy_ball" target="_blank" rel="noopener" data-event="social_click" data-network="telegram" data-page-section="footer">Telegram</a>
+          <a href="https://youtube.com/@vysshiy_ball" target="_blank" rel="noopener" data-event="social_click" data-network="youtube" data-page-section="footer">YouTube</a>
+        </div>
+      </div>
+      <div><h4 class="footer__title">Документы</h4><p><a href="privacy.html">Политика конфиденциальности</a></p></div>
+    </div>
+    <div class="container"><p class="footer__copy">© 2026 АНО ДО «Высший балл». Все права защищены.</p></div>
+  </footer>
+
+  <script src="js/analytics.js"></script>
+  <script>
+    // Показываем номер заявки из sessionStorage
+    (function () {
+      try {
+        const id = sessionStorage.getItem('request_id');
+        if (id) {
+          document.getElementById('request-id').textContent = id;
+        } else {
+          document.getElementById('request-id').textContent = 'Не найден (возможно, вы открыли страницу напрямую)';
+        }
+      } catch (e) {
+        document.getElementById('request-id').textContent = 'Не найден';
+      }
+    })();
+  </script>
+</body>
+</html>

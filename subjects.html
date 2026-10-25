@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Предметы — Высший балл</title>
+  <meta name="description" content="Подготовка к ЕГЭ и ОГЭ по 6 предметам: математика, русский, информатика, обществознание, физика, английский. Программы, форматы, преподаватели.">
+  <meta property="og:title" content="Предметы — Высший балл">
+  <meta property="og:description" content="6 предметов, программы, форматы обучения.">
+  <meta property="og:image" content="https://example.vercel.app/img/og-cover.jpg">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX');
+  </script>
+</head>
+<body>
+
+  <header class="header">
+    <div class="container header__inner">
+      <a href="index.html" class="header__logo">
+        <img src="img/logo.svg" alt="Высший балл" width="120" height="40">
+      </a>
+      <nav class="header__nav" aria-label="Основное меню">
+        <a href="index.html" class="header__link">Главная</a>
+        <a href="subjects.html" class="header__link active">Предметы</a>
+        <a href="teachers.html" class="header__link">Преподаватели</a>
+        <a href="results.html" class="header__link">Результаты</a>
+        <a href="prices.html" class="header__link">Цены</a>
+        <a href="contacts.html" class="header__link">Контакты</a>
+      </nav>
+      <a href="tel:+74951234567" class="header__phone" data-event="contact_click" data-contact-type="phone">+7 (495) 123-45-67</a>
+      <button class="header__burger" aria-label="Открыть меню">☰</button>
+    </div>
+  </header>
+
+  <section class="section">
+    <div class="container">
+      <h1>Предметы</h1>
+      <p>Готовим к ЕГЭ и ОГЭ по шести предметам. Группы до 8 человек, мини-группы до 4, индивидуально.</p>
+
+      <div class="grid mt-24">
+        <article class="card" id="math">
+          <h2 class="card__title">Математика</h2>
+          <p class="card__text">Профиль и база. Средний балл 2026 — 74. Разбор всех типов заданий, тренировка на реальных вариантах.</p>
+        </article>
+        <article class="card" id="russian">
+          <h2 class="card__title">Русский язык</h2>
+          <p class="card__text">Средний балл 2026 — 81. Сочинение, тестовая часть, работа с ошибками.</p>
+        </article>
+        <article class="card" id="informatics">
+          <h2 class="card__title">Информатика</h2>
+          <p class="card__text">Средний балл 2026 — 77. Программирование, алгоритмы, разбор заданий ЕГЭ.</p>
+        </article>
+        <article class="card" id="social">
+          <h2 class="card__title">Обществознание</h2>
+          <p class="card__text">Средний балл 2026 — 69. Экономика, право, политика, социальные отношения.</p>
+        </article>
+        <article class="card" id="physics">
+          <h2 class="card__title">Физика</h2>
+          <p class="card__text">Механика, термодинамика, электродинамика, оптика. Разбор задач повышенной сложности.</p>
+        </article>
+        <article class="card" id="english">
+          <h2 class="card__title">Английский язык</h2>
+          <p class="card__text">Аудирование, чтение, грамматика, письмо, устная часть.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--light">
+    <div class="container">
+      <h2>Программа обучения</h2>
+      <p>Скачайте PDF с полной программой по всем предметам.</p>
+      <a href="files/program.pdf"
+         class="btn btn--secondary"
+         download
+         data-event="file_download">
+        Скачать программу (PDF)
+      </a>
+
+      <p class="mt-24">
+        <a href="contacts.html"
+           class="btn btn--primary"
+           data-event="cta_click"
+           data-button-name="subjects_trial"
+           data-page-section="subjects">
+          Записаться на пробный ЕГЭ
+        </a>
+      </p>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div>
+        <h4 class="footer__title">Высший балл</h4>
+        <p>Центр подготовки к ЕГЭ и ОГЭ с 2017 года.</p>
+      </div>
+      <div>
+        <h4 class="footer__title">Контакты</h4>
+        <p>
+          <a href="tel:+74951234567" data-event="contact_click" data-contact-type="phone">+7 (495) 123-45-67</a><br>
+          <a href="mailto:nabor@vysshiy-ball.example" data-event="contact_click" data-contact-type="email">nabor@vysshiy-ball.example</a>
+        </p>
+      </div>
+      <div>
+        <h4 class="footer__title">Соцсети</h4>
+        <div class="footer__social">
+          <a href="https://instagram.com/vysshiy_ball_ege" target="_blank" rel="noopener" data-event="social_click" data-network="instagram" data-page-section="footer">Instagram</a>
+          <a href="https://vk.com/vysshiy_ball" target="_blank" rel="noopener" data-event="social_click" data-network="vk" data-page-section="footer">ВКонтакте</a>
+          <a href="https://t.me/vysshiy_ball" target="_blank" rel="noopener" data-event="social_click" data-network="telegram" data-page-section="footer">Telegram</a>
+          <a href="https://youtube.com/@vysshiy_ball" target="_blank" rel="noopener" data-event="social_click" data-network="youtube" data-page-section="footer">YouTube</a>
+        </div>
+      </div>
+      <div>
+        <h4 class="footer__title">Документы</h4>
+        <p><a href="privacy.html">Политика конфиденциальности</a></p>
+      </div>
+    </div>
+    <div class="container">
+      <p class="footer__copy">© 2026 АНО ДО «Высший балл». Все права защищены.</p>
+    </div>
+  </footer>
+
+  <script src="js/analytics.js"></script>
+</body>
+</html>

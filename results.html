@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Результаты 2026 — Высший балл</title>
+  <meta name="description" content="Средние баллы учеников центра «Высший балл» в 2026 году: математика 74, русский 81, информатика 77, обществознание 69. 12 учеников набрали 100 баллов.">
+  <meta property="og:title" content="Результаты 2026 — Высший балл">
+  <meta property="og:description" content="Средние баллы 2026: математика 74, русский 81, информатика 77, обществознание 69.">
+  <meta property="og:image" content="https://example.vercel.app/img/og-cover.jpg">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX');
+  </script>
+  <style>
+    .results-table { width: 100%; border-collapse: collapse; margin-top: 16px; }
+    .results-table th, .results-table td { padding: 10px 12px; border-bottom: 1px solid var(--border); text-align: left; }
+    .results-table th { background: var(--light); font-family: 'Montserrat', sans-serif; }
+    .bar { height: 24px; background: var(--blue); border-radius: 4px; }
+    .bar-row { display: grid; grid-template-columns: 180px 1fr 60px; gap: 8px; align-items: center; margin-bottom: 8px; }
+  </style>
+</head>
+<body>
+
+  <header class="header">
+    <div class="container header__inner">
+      <a href="index.html" class="header__logo"><img src="img/logo.svg" alt="Высший балл" width="120" height="40"></a>
+      <nav class="header__nav" aria-label="Основное меню">
+        <a href="index.html" class="header__link">Главная</a>
+        <a href="subjects.html" class="header__link">Предметы</a>
+        <a href="teachers.html" class="header__link">Преподаватели</a>
+        <a href="results.html" class="header__link active">Результаты</a>
+        <a href="prices.html" class="header__link">Цены</a>
+        <a href="contacts.html" class="header__link">Контакты</a>
+      </nav>
+      <a href="tel:+74951234567" class="header__phone" data-event="contact_click" data-contact-type="phone">+7 (495) 123-45-67</a>
+      <button class="header__burger" aria-label="Открыть меню">☰</button>
+    </div>
+  </header>
+
+  <section class="section">
+    <div class="container">
+      <h1>Результаты 2026</h1>
+      <p>Средние баллы учеников центра по итогам ЕГЭ 2026 года.</p>
+
+      <div class="grid mt-24">
+        <div class="form__field">
+          <label class="form__label" for="filter-subject">Предмет</label>
+          <select class="form__select" id="filter-subject">
+            <option value="">Все предметы</option>
+            <option value="math_profile">Математика (профиль)</option>
+            <option value="russian">Русский язык</option>
+            <option value="informatics">Информатика</option>
+            <option value="social">Обществознание</option>
+          </select>
+        </div>
+        <div class="form__field">
+          <label class="form__label" for="filter-year">Год</label>
+          <select class="form__select" id="filter-year">
+            <option value="2026">2026</option>
+            <option value="2025">2025</option>
+          </select>
+        </div>
+      </div>
+
+      <h2 class="mt-24">Средние баллы</h2>
+      <div class="mt-16" id="bars">
+        <div class="bar-row" data-subject="math_profile" data-year="2026">
+          <span>Математика (профиль)</span>
+          <div class="bar" style="width:74%"></div>
+          <strong>74</strong>
+        </div>
+        <div class="bar-row" data-subject="russian" data-year="2026">
+          <span>Русский язык</span>
+          <div class="bar" style="width:81%"></div>
+          <strong>81</strong>
+        </div>
+        <div class="bar-row" data-subject="informatics" data-year="2026">
+          <span>Информатика</span>
+          <div class="bar" style="width:77%"></div>
+          <strong>77</strong>
+        </div>
+        <div class="bar-row" data-subject="social" data-year="2026">
+          <span>Обществознание</span>
+          <div class="bar" style="width:69%"></div>
+          <strong>69</strong>
+        </div>
+      </div>
+
+      <h2 class="mt-24">Таблица</h2>
+      <table class="results-table">
+        <thead>
+          <tr><th>Предмет</th><th>Год</th><th>Средний балл</th></tr>
+        </thead>
+        <tbody id="results-tbody">
+          <tr data-subject="math_profile" data-year="2026"><td>Математика (профиль)</td><td>2026</td><td>74</td></tr>
+          <tr data-subject="russian" data-year="2026"><td>Русский язык</td><td>2026</td><td>81</td></tr>
+          <tr data-subject="informatics" data-year="2026"><td>Информатика</td><td>2026</td><td>77</td></tr>
+          <tr data-subject="social" data-year="2026"><td>Обществознание</td><td>2026</td><td>69</td></tr>
+          <tr data-subject="math_profile" data-year="2025"><td>Математика (профиль)</td><td>2025</td><td>71</td></tr>
+          <tr data-subject="russian" data-year="2025"><td>Русский язык</td><td>2025</td><td>79</td></tr>
+        </tbody>
+      </table>
+
+      <p class="mt-24"><strong>12 учеников набрали 100 баллов</strong> в 2026 году.</p>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div><h4 class="footer__title">Высший балл</h4><p>Центр подготовки к ЕГЭ и ОГЭ с 2017 года.  </section>
+
+        <footer class="footer">
+          <div class="container footer__inner">
+            <div><h4 class="footer__title">Высший балл</h4><p>Центр подготовки к ЕГЭ и ОГЭ с 2017 года.</p></div>
+            <div><h4 class="footer__title">Контакты</h4><p><a href="tel:+74951234567" data-event="contact_click" data-contact-type="phone">+7 (495) 123-45-67</a><br><a href="mailto:nabor@vysshiy-ball.example" data-event="contact_click" data-contact-type="email">nabor@vysshiy-ball.example</a></p></div>
+            <div><h4 class="footer__title">Соцсети</h4>
+              <div class="footer__social">
+                <a href="https://instagram.com/vysshiy_ball_ege" target="_blank" rel="noopener" data-event="social_click" data-network="instagram" data-page-section="footer">Instagram</a>
+                <a href="https://vk.com/vysshiy_ball" target="_blank" rel="noopener" data-event="social_click" data-network="vk" data-page-section="footer">ВКонтакте</a>
+                <a href="https://t.me/vysshiy_ball" target="_blank" rel="noopener" data-event="social_click" data-network="telegram" data-page-section="footer">Telegram</a>
+                <a href="https://youtube.com/@vysshiy_ball" target="_blank" rel="noopener" data-event="social_click" data-network="youtube" data-page-section="footer">YouTube</a>
+              </div>
+            </div>
+            <div><h4 class="footer__title">Документы</h4><p><a href="privacy.html">Политика конфиденциальности</a></p></div>
+          </div>
+          <div class="container"><p class="footer__copy">© 2026 АНО ДО «Высший балл». Все права защищены.</p></div>
+        </footer>
+      
+        <script src="js/analytics.js"></script>
+        <script>
+          // Фильтрация таблицы и диаграммы по предмету и году
+          (function () {
+            const subjectSel = document.getElementById('filter-subject');
+            const yearSel = document.getElementById('filter-year');
+            if (!subjectSel || !yearSel) return;
+      
+            function applyFilter() {
+              const subject = subjectSel.value;
+              const year = yearSel.value;
+              // Отправляем событие results_filter
+              if (typeof sendEvent === 'function') {
+                sendEvent('results_filter', {
+                  subject: subject || 'all',
+                  exam_year: year || 'all'
+                });
+              }
+              // Фильтруем строки таблицы
+              document.querySelectorAll('#results-tbody tr').forEach(function (tr) {
+                const okSubject = !subject || tr.dataset.subject === subject;
+                const okYear = !year || tr.dataset.year === year;
+                tr.style.display = (okSubject && okYear) ? '' : 'none';
+              });
+              // Фильтруем диаграммы
+              document.querySelectorAll('#bars .bar-row').forEach(function (row) {
+                const okSubject = !subject || row.dataset.subject === subject;
+                const okYear = !year || row.dataset.year === year;
+                row.style.display = (okSubject && okYear) ? '' : 'none';
+              });
+            }
+      
+            subjectSel.addEventListener('change', applyFilter);
+            yearSel.addEventListener('change', applyFilter);
+          })();
+        </script>
+      </body>
+      </html>

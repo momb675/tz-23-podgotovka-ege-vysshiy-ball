@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Калькулятор баллов ЕГЭ — Высший балл</title>
+  <meta name="description" content="Переведите первичные баллы ЕГЭ в итоговые по условной шкале. Математика, русский язык, информатика, обществознание.">
+  <meta property="og:title" content="Калькулятор баллов ЕГЭ — Высший балл">
+  <meta property="og:description" content="Переведите первичные баллы в итоговые по условной шкале.">
+  <meta property="og:image" content="https://example.vercel.app/img/og-cover.jpg">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX');
+  </script>
+</head>
+<body>
+
+  <header class="header">
+    <div class="container header__inner">
+      <a href="index.html" class="header__logo"><img src="img/logo.svg" alt="Высший балл" width="120" height="40"></a>
+      <nav class="header__nav" aria-label="Основное меню">
+        <a href="index.html" class="header__link">Главная</a>
+        <a href="subjects.html" class="header__link">Предметы</a>
+        <a href="teachers.html" class="header__link">Преподаватели</a>
+        <a href="results.html" class="header__link">Результаты</a>
+        <a href="prices.html" class="header__link">Цены</a>
+        <a href="contacts.html" class="header__link">Контакты</a>
+      </nav>
+      <a href="tel:+74951234567" class="header__phone" data-event="contact_click" data-contact-type="phone">+7 (495) 123-45-67</a>
+      <button class="header__burger" aria-label="Открыть меню">☰</button>
+    </div>
+  </header>
+
+  <section class="section">
+    <div class="container">
+      <h1>Калькулятор баллов</h1>
+      <p>Переведите первичные баллы в итоговые по условной шкале. Выберите предмет и введите первичный балл.</p>
+
+      <div class="form mt-24">
+        <div class="form__field">
+          <label class="form__label" for="score-subject">Предмет</label>
+          <select class="form__select" id="score-subject">
+            <option value="math_profile">Математика (профиль)</option>
+            <option value="russian">Русский язык</option>
+            <option value="informatics">Информатика</option>
+            <option value="social">Обществознание</option>
+          </select>
+        </div>
+
+        <div class="form__field">
+          <label class="form__label" for="score-primary">Первичный балл</label>
+          <input class="form__input" type="number" id="score-primary" min="0" max="100" value="0">
+        </div>
+
+        <div class="card" style="text-align:center">
+          <p class="card__text mb-0">Итоговый балл</p>
+          <p id="score-result" style="font-size:48px;font-weight:700;color:var(--blue);margin:8px 0">0</p>
+          <p class="card__text mb-0" style="font-size:13px">Шкала условная, официальная утверждается Рособрнадзором ежегодно</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div><h4 class="footer__title">Высший балл</h4><p>Центр подготовки к ЕГЭ и ОГЭ с 2017 года.</p></div>
+      <div><h4 class="footer__title">Контакты</h4><p><a href="tel:+74951234567" data-event="contact_click" data-contact-type="phone">+7 (495) 123-45-67</a><br><a href="mailto:nabor@vysshiy-ball.example" data-event="contact_click" data-contact-type="email">nabor@vysshiy-ball.example</a></p></div>
+      <div><h4 class="footer__title">Соцсети</h4>
+        <div class="footer__social">
+          <a href="https://instagram.com/vysshiy_ball_ege" target="_blank" rel="noopener" data-event="social_click" data-network="instagram" data-page-section="footer">Instagram</a>
+          <a href="https://vk.com/vysshiy_ball" target="_blank" rel="noopener" data-event="social_click" data-network="vk" data-page-section="footer">ВКонтакте</a>
+          <a href="https://t.me/vysshiy_ball" target="_blank" rel="noopener" data-event="social_click" data-network="telegram" data-page-section="footer">Telegram</a>
+          <a href="https://youtube.com/@vysshiy_ball" target="_blank" rel="noopener" data-event="social_click" data-network="youtube" data-page-section="footer">YouTube</a>
+        </div>
+      </div>
+      <div><h4 class="footer__title">Документы</h4><p><a href="privacy.html">Политика конфиденциальности</a></p></div>
+    </div>
+    <div class="container"><p class="footer__copy">© 2026 АНО ДО «Высший балл». Все права защищены.</p></div>
+  </footer>
+
+  <script src="js/analytics.js"></script>
+  <script>
+    // Условные шкалы перевода: массив пар [первичный, тестовый]
+    const SCALES = {
+      math_profile: [[0,0],[5,27],[10,50],[15,68],[20,82],[25,90],[30,100],[35,100]],
+      russian:      [[0,0],[10,25],[20,50],[30,72],[40,85],[50,95],[58,100]],
+      informatics:  [[0,0],[5,20],[10,45],[15,65],[20,80],[25,90],[30,100]],
+      social:       [[0,0],[10,25],[20,48],[30,65],[40,80],[50,92],[58,100]]
+    };
+
+    // Линейная интерполяция между ближайшими точками
+    function interpolate(scale, primary) {
+      for (let i = 0; i < scale.length - 1; i++) {
+        const [x1, y1] = scale[i];
+        const [x2, y2] = scale[i + 1];
+        if (primary >= x1 && primary <= x2) {
+          if (x2 === x1) return y1;
+          const t = (primary - x1) / (x2 - x1);
+          return Math.round(y1 + t * (y2 - y1));
+        }
+      }
+      return primary >= scale[scale.length - 1][0] ? 100 : 0;
+    }
+
+    const subjectSel = document.getElementById('score-subject');
+    const primaryInput = document.getElementById('score-primary');
+    const resultEl = document.getElementById('score-result');
+
+    function updateScore() {
+      const subject = subjectSel.value;
+      const primary = Math.max(0, Math.min(100, parseInt(primaryInput.value, 10) || 0));
+      const test = interpolate(SCALES[subject] || SCALES.math_profile, primary);
+      resultEl.textContent = test;
+      if (typeof sendEvent === 'function') {
+        sendEvent('score_calc', {
+          subject: subject,
+          primary_score: primary,
+          test_score: test
+        });
+      }
+    }
+
+    subjectSel.addEventListener('change', updateScore);
+    primaryInput.addEventListener('input', updateScore);
+    updateScore();
+  </script>
+</body>
+</html>

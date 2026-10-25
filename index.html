@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Высший балл — подготовка к ЕГЭ и ОГЭ с 2017 года</title>
+  <meta name="description" content="Центр подготовки к ЕГЭ и ОГЭ: 6 предметов, 18 преподавателей, 470 учеников. Бесплатный пробный ЕГЭ 13 декабря 2026 с разбором результатов.">
+  <meta property="og:title" content="Высший балл — подготовка к ЕГЭ и ОГЭ">
+  <meta property="og:description" content="Бесплатный пробный ЕГЭ 13 декабря 2026 с разбором. 6 предметов, 18 преподавателей, 470 учеников.">
+  <meta property="og:image" content="https://example.vercel.app/img/og-cover.jpg">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+
+  <!-- Шрифты -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@600;700&display=swap" rel="stylesheet">
+
+  <!-- Стили -->
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- Google Analytics 4 (замени G-XXXXXXXXXX на свой ID) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX');
+  </script>
+</head>
+<body>
+
+  <!-- ШАПКА -->
+  <header class="header">
+    <div class="container header__inner">
+      <a href="index.html" class="header__logo">
+        <img src="img/logo.svg" alt="Высший балл" width="120" height="40">
+      </a>
+      <nav class="header__nav" aria-label="Основное меню">
+        <a href="index.html" class="header__link active">Главная</a>
+        <a href="subjects.html" class="header__link">Предметы</a>
+        <a href="teachers.html" class="header__link">Преподаватели</a>
+        <a href="results.html" class="header__link">Результаты</a>
+        <a href="prices.html" class="header__link">Цены</a>
+        <a href="contacts.html" class="header__link">Контакты</a>
+      </nav>
+      <a href="tel:+74951234567" class="header__phone"
+         data-event="contact_click" data-contact-type="phone">
+        +7 (495) 123-45-67
+      </a>
+      <button class="header__burger" aria-label="Открыть меню">☰</button>
+    </div>
+  </header>
+
+  <!-- ПЕРВЫЙ ЭКРАН -->
+  <section class="hero">
+    <div class="container">
+      <h1 class="hero__title">Подготовка к ЕГЭ, которая приносит баллы</h1>
+      <p class="hero__subtitle">
+        Бесплатный пробный ЕГЭ 13 декабря — в формате реального экзамена с разбором.
+        Группы до 8 человек, мини-группы до 4, индивидуально.
+      </p>
+      <div class="hero__actions">
+        <a href="contacts.html"
+           class="btn btn--primary"
+           data-event="cta_click"
+           data-button-name="hero_trial"
+           data-page-section="hero">
+          Записаться на пробный ЕГЭ
+        </a>
+        <a href="diagnostic.html"
+           class="btn btn--outline"
+           style="color:#fff;border-color:#fff"
+           data-event="cta_click"
+           data-button-name="hero_diagnostic"
+           data-page-section="hero">
+          Пройти диагностику
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ПРЕДМЕТЫ -->
+  <section class="section" id="subjects">
+    <div class="container">
+      <h2 class="section__title">Предметы</h2>
+      <div class="grid">
+
+        <article class="card card--clickable"
+                 data-event="subject_select" data-subject="math_profile"
+                 onclick="location.href='subjects.html#math'">
+          <h3 class="card__title">Математика</h3>
+          <p class="card__text">Профиль и база. Средний балл 2026 — 74.</p>
+        </article>
+
+        <article class="card card--clickable"
+                 data-event="subject_select" data-subject="russian"
+                 onclick="location.href='subjects.html#russian'">
+          <h3 class="card__title">Русский язык</h3>
+          <p class="card__text">Средний балл 2026 — 81.</p>
+        </article>
+
+        <article class="card card--clickable"
+                 data-event="subject_select" data-subject="informatics"
+                 onclick="location.href='subjects.html#informatics'">
+          <h3 class="card__title">Информатика</h3>
+          <p class="card__text">Средний балл 2026 — 77.</p>
+        </article>
+
+        <article class="card card--clickable"
+                 data-event="subject_select" data-subject="social"
+                 onclick="location.href='subjects.html#social'">
+          <h3 class="card__title">Обществознание</h3>
+          <p class="card__text">Средний балл 2026 — 69.</p>
+        </article>
+
+        <article class="card card--clickable"
+                 data-event="subject_select" data-subject="physics"
+                 onclick="location.href='subjects.html#physics'">
+          <h3 class="card__title">Физика</h3>
+          <p class="card__text">Подготовка к ЕГЭ с разбором задач.</p>
+        </article>
+
+        <article class="card card--clickable"
+                 data-event="subject_select" data-subject="english"
+                 onclick="location.href='subjects.html#english'">
+          <h3 class="card__title">Английский язык</h3>
+          <p class="card__text">Подготовка к ЕГЭ, все разделы экзамена.</p>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- РЕЗУЛЬТАТЫ 2026 -->
+  <section class="section section--light">
+    <div class="container">
+      <h2 class="section__title">Результаты 2026</h2>
+      <div class="grid">
+        <div class="card">
+          <h3 class="card__title">74</h3>
+          <p class="card__text mb-0">средний балл по математике (профиль)</p>
+        </div>
+        <div class="card">
+          <h3 class="card__title">81</h3>
+          <p class="card__text mb-0">средний балл по русскому языку</p>
+        </div>
+        <div class="card">
+          <h3 class="card__title">12</h3>
+          <p class="card__text mb-0">учеников набрали 100 баллов</p>
+        </div>
+      </div>
+      <p class="mt-24">
+        <a href="results.html" class="btn btn--secondary"
+           data-event="cta_click" data-button-name="results_more"
+           data-page-section="results">Смотреть все результаты</a>
+      </p>
+    </div>
+  </section>
+
+  <!-- РОДИТЕЛЯМ -->
+  <section class="section" id="parents">
+    <div class="container">
+      <h2 class="section__title">Родителям</h2>
+      <div class="grid">
+        <div class="card">
+          <h3 class="card__title">Договор и оплата</h3>
+          <p class="card__text">Официальный договор, оплата по месяцам, скидка 10 % на второй предмет.</p>
+          <a href="prices.html" class="btn btn--outline">Цены</a>
+        </div>
+        <div class="card">
+          <h3 class="card__title">Отзывы</h3>
+          <p class="card__text">Родители отмечают прозрачную отчётность и рост баллов уже через 2 месяца.</p>
+        </div>
+        <div class="card">
+          <h3 class="card__title">Безопасность</h3>
+          <p class="card__text">Занятия в оборудованных классах, преподаватели с опытом от 5 лет.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ПОДВАЛ -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div>
+        <h4 class="footer__title">Высший балл</h4>
+        <p>Центр подготовки к ЕГЭ и ОГЭ с 2017 года.</p>
+      </div>
+      <div>
+        <h4 class="footer__title">Контакты</h4>
+        <p>
+          <a href="tel:+74951234567" data-event="contact_click" data-contact-type="phone">+7 (495) 123-45-67</a><br>
+          <a href="mailto:nabor@vysshiy-ball.example" data-event="contact_click" data-contact-type="email">nabor@vysshiy-ball.example</a>
+        </p>
+      </div>
+      <div>
+        <h4 class="footer__title">Соцсети</h4>
+        <div class="footer__social">
+          <a href="https://instagram.com/vysshiy_ball_ege?utm_source=instagram&utm_medium=social&utm_campaign=probnik_dec_2026&utm_content=footer"
+             target="_blank" rel="noopener"
+             data-event="social_click" data-network="instagram" data-page-section="footer">Instagram</a>
+          <a href="https://vk.com/vysshiy_ball?utm_source=vk&utm_medium=social&utm_campaign=probnik_dec_2026&utm_content=footer"
+             target="_blank" rel="noopener"
+             data-event="social_click" data-network="vk" data-page-section="footer">ВКонтакте</a>
+          <a href="https://t.me/vysshiy_ball?utm_source=telegram&utm_medium=social&utm_campaign=probnik_dec_2026&utm_content=footer"
+             target="_blank" rel="noopener"
+             data-event="social_click" data-network="telegram" data-page-section="footer">Telegram</a>
+          <a href="https://youtube.com/@vysshiy_ball?utm_source=youtube&utm_medium=social&utm_campaign=probnik_dec_2026&utm_content=footer"
+             target="_blank" rel="noopener"
+             data-event="social_click" data-network="youtube" data-page-section="footer">YouTube</a>
+        </div>
+      </div>
+      <div>
+        <h4 class="footer__title">Документы</h4>
+        <p><a href="privacy.html">Политика конфиденциальности</a></p>
+      </div>
+    </div>
+    <div class="container">
+      <p class="footer__copy">© 2026 АНО ДО «Высший балл». Все права защищены.</p>
+    </div>
+  </footer>
+
+  <!-- Скрипты -->
+  <script src="js/analytics.js"></script>
+</body>
+</html>

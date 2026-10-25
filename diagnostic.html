@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Мини-диагностика ЕГЭ — Высший балл</title>
+  <meta name="description" content="Проверь себя: 8 заданий в формате ЕГЭ по математике, русскому языку или информатике с разбором. Промокод BALL10.">
+  <meta property="og:title" content="Мини-диагностика ЕГЭ — Высший балл">
+  <meta property="og:description" content="8 заданий в формате ЕГЭ с разбором. Промокод BALL10.">
+  <meta property="og:image" content="https://example.vercel.app/img/og-cover.jpg">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX');
+  </script>
+</head>
+<body>
+
+  <header class="header">
+    <div class="container header__inner">
+      <a href="index.html" class="header__logo"><img src="img/logo.svg" alt="Высший балл" width="120" height="40"></a>
+      <nav class="header__nav" aria-label="Основное меню">
+        <a href="index.html" class="header__link">Главная</a>
+        <a href="subjects.html" class="header__link">Предметы</a>
+        <a href="teachers.html" class="header__link">Преподаватели</a>
+        <a href="results.html" class="header__link">Результаты</a>
+        <a href="prices.html" class="header__link">Цены</a>
+        <a href="contacts.html" class="header__link">Контакты</a>
+      </nav>
+      <a href="tel:+74951234567" class="header__phone" data-event="contact_click" data-contact-type="phone">+7 (495) 123-45-67</a>
+      <button class="header__burger" aria-label="Открыть меню">☰</button>
+    </div>
+  </header>
+
+  <section class="section">
+    <div class="container">
+      <h1>Мини-диагностика</h1>
+
+      <!-- ЭКРАН 1: СТАРТ -->
+      <div id="screen-start" class="card mt-24">
+        <h2 class="card__title">Проверь себя за 10 минут</h2>
+        <p class="card__text">8 заданий в формате ЕГЭ с разбором. Выбери предмет и начни.</p>
+        <div class="form__field">
+          <label class="form__label" for="diag-subject">Предмет</label>
+          <select class="form__select" id="diag-subject">
+            <option value="math_profile">Математика (профиль)</option>
+            <option value="russian">Русский язык</option>
+            <option value="informatics">Информатика</option>
+          </select>
+        </div>
+        <button class="btn btn--primary mt-16" id="btn-start">Начать</button>
+      </div>
+
+      <!-- ЭКРАН 2: ЗАДАНИЯ -->
+      <div id="screen-task" class="card mt-24" hidden>
+        <p class="card__text">Задание <span id="task-num">1</span> из 8</p>
+        <h2 class="card__title" id="task-text">—</h2>
+        <div class="form__field mt-16">
+          <label class="form__label" for="task-answer">Ответ</label>
+          <input class="form__input" type="text" id="task-answer" autocomplete="off">
+          <span class="form__error" id="task-error"></span>
+        </div>
+        <button class="btn btn--primary mt-16" id="btn-next">Далее</button>
+      </div>
+
+      <!-- ЭКРАН 3: РЕЗУЛЬТАТ -->
+      <div id="screen-result" class="mt-24" hidden>
+        <div class="card">
+          <h2 class="card__title">Результат: <span id="result-score">0</span> из 8</h2>
+          <p class="card__text">Ниже — разбор каждого задания.</p>
+        </div>
+        <div id="review-list" class="grid mt-16"></div>
+
+        <div class="card mt-24" style="text-align:center">
+          <h2 class="card__title">Промокод на скидку</h2>
+          <p style="font-size:28px;font-weight:700;color:var(--blue);margin:8px 0" id="promo-code">BALL10</p>
+          <button class="btn btn--secondary" id="btn-copy-promo"
+                  data-event="promo_copy" data-promo-code="BALL10">
+            Скопировать промокод
+          </button>
+        </div>
+
+        <p class="mt-24 text-center">
+          <a href="contacts.html" class="btn btn--primary"
+             data-event="cta_click" data-button-name="diagnostic_trial" data-page-section="diagnostic">
+            Записаться на пробный ЕГЭ
+          </a>
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div><h4 class="footer__title">Высший балл</h4><p>Центр подготовки к ЕГЭ и ОГЭ с 2017 года.</p></div>
+      <div><h4 class="footer__title">Контакты</h4><p><a href="tel:+74951234567" data-event="contact_click" data-contact-type="phone">+7 (495) 123-45-67</a><br><a href="mailto:nabor@vysshiy-ball.example" data-event="contact_click" data-contact-type="email">nabor@vysshiy-ball.example</a></p></div>
+      <div><h4 class="footer__title">Соцсети</h4>
+        <div class="footer__social">
+          <a href="https://instagram.com/vysshiy_ball_ege" target="_blank" rel="noopener" data-event="social_click" data-network="instagram" data-page-section="footer">Instagram</a>
+          <a href="https://vk.com/vysshiy_ball" target="_blank" rel="noopener" data-event="social_click" data-network="vk" data-page-section="footer">ВКонтакте</a>
+          <a href="https://t.me/vysshiy_ball" target="_blank" rel="noopener" data-event="social_click" data-network="telegram" data-page-section="footer">Telegram</a>
+          <a href="https://youtube.com/@vysshiy_ball" target="_blank" rel="noopener" data-event="social_click" data-network="youtube" data-page-section="footer">YouTube</a>
+        </div>
+      </div>
+      <div><h4 class="footer__title">Документы</h4><p><a href="privacy.html">Политика конфиденциальности</a></p></div>
+    </div>
+    <div class="container"><p class="footer__copy">© 2026 АНО ДО «Высший балл». Все права защищены.</p></div>
+  </footer>
+
+  <script src="js/analytics.js"></script>
+  <script>
+    // 8 заданий по каждому предмету (примеры по открытому банку ФИПИ)
+    const TASKS = {
+      math_profile: [
+        { q: 'Найдите корень уравнения 2^(x-3) = 32', a: '8' },
+        { q: 'Найдите значение выражения 5^2 · 5^(-4) : 5^(-3)', a: '5' },
+        { q: 'Найдите корень уравнения √(x+7) = 3', a: '2' },
+        { q: 'Найдите значение выражения log_2 48 - log_2 3', a: '4' },
+        { q: 'Найдите корень уравнения 3^(2x-1) = 27', a: '2' },
+        { q: 'Найдите значение выражения sin 30° + cos 60°', a: '1' },
+        { q: 'Найдите корень уравнения x^2 - 5x + 6 = 0 (в ответ меньший корень)', a: '2' },
+        { q: 'Найдите значение выражения 7! / 5!', a: '42' }
+      ],
+      russian: [
+        { q: 'В каком слове ударение на втором слоге: звонИт, тОрты, красИвее, каталОг?', a: 'звонит' },
+        { q: 'Сколько букв в слове «яблоко»?', a: '6' },
+        { q: 'Какая часть речи слово «быстро» в предложении «Он бежал быстро»?', a: 'наречие' },
+        { q: 'Вставьте пропущенную букву: «пр_красный»', a: 'е' },
+        { q: 'Сколько звуков в слове «ёлка»?', a: '5' },
+        { q: 'Какое слово пишется слитно: «(не)смотря на дождь» или «(не)глядя»?', a: 'несмотря' },
+        { q: 'Вставьте Н или НН: «серебр_ый»', a: 'н' },
+        { q: 'Какое слово является синонимом к «большой»: огромный, маленький, узкий, короткий?', a: 'огромный' }
+      ],
+      informatics: [
+        { q: 'Сколько единиц в двоичной записи числа 13?', a: '3' },
+        { q: 'Чему равно 2^10?', a: '1024' },
+        { q: 'Сколько бит в одном байте?', a: '8' },
+        { q: 'Чему равно 1011₂ + 110₂ в десятичной системе?', a: '17' },
+        { q: 'Сколько байт в 2 Кбайт?', a: '2048' },
+        { q: 'Чему равно 16₁₆ в десятичной системе?', a: '22' },
+        { q: 'Сколько различных значений можно закодировать 4 битами?', a: '16' },
+        { q: 'Чему равно 11111111₂ в десятичной системе?', a: '255' }
+      ]
+    };
+
+    // ===== Состояние диагностики =====
+    let currentSubject = 'math_profile';
+    let currentIndex = 0;
+    let answers = [];   // ответы пользователя
+    let correctCount = 0;
+
+    const screenStart = document.getElementById('screen-start');
+    const screenTask = document.getElementById('screen-task');
+    const screenResult = document.getElementById('screen-result');
+    const taskNumEl = document.getElementById('task-num');
+    const taskTextEl = document.getElementById('task-text');
+    const taskAnswerEl = document.getElementById('task-answer');
+    const taskErrorEl = document.getElementById('task-error');
+    const btnStart = document.getElementById('btn-start');
+    const btnNext = document.getElementById('btn-next');
+    const resultScoreEl = document.getElementById('result-score');
+    const reviewListEl = document.getElementById('review-list');
+
+    // ===== Нормализация ответа: убираем пробелы, запятые → точки, нижний регистр =====
+    function normalize(value) {
+      return String(value)
+        .trim()
+        .toLowerCase()
+        .replace(/\s+/g, '')
+        .replace(/,/g, '.');
+    }
+
+    // ===== Показать текущее задание =====
+    function renderTask() {
+      const tasks = TASKS[currentSubject];
+      const task = tasks[currentIndex];
+      taskNumEl.textContent = (currentIndex + 1);
+      taskTextEl.textContent = task.q;
+      taskAnswerEl.value = '';
+      taskErrorEl.textContent = '';
+      taskAnswerEl.classList.remove('error');
+      btnNext.textContent = (currentIndex === tasks.length - 1) ? 'Завершить' : 'Далее';
+    }
+
+    // ===== Старт диагностики =====
+    btnStart.addEventListener('click', function () {
+      currentSubject = document.getElementById('diag-subject').value;
+      currentIndex = 0;
+      answers = [];
+      correctCount = 0;
+      screenStart.hidden = true;
+      screenTask.hidden = false;
+      screenResult.hidden = true;
+      renderTask();
+      if (typeof sendEvent === 'function') {
+        sendEvent('diagnostic_start', { subject: currentSubject });
+      }
+    });
+
+    // ===== Ответ на задание =====
+    btnNext.addEventListener('click', function () {
+      const tasks = TASKS[currentSubject];
+      const task = tasks[currentIndex];
+      const userAnswer = normalize(taskAnswerEl.value);
+
+      if (userAnswer === '') {
+        taskErrorEl.textContent = 'Введите ответ';
+        taskAnswerEl.classList.add('error');
+        return;
+      }
+
+      // Сохраняем ответ и проверяем
+      const isCorrect = userAnswer === normalize(task.a);
+      answers.push({ userAnswer: taskAnswerEl.value, correct: isCorrect });
+      if (isCorrect) correctCount++;
+
+      // Переход к следующему заданию или к результату
+      if (currentIndex < tasks.length - 1) {
+        currentIndex++;
+        renderTask();
+      } else {
+        finishDiagnostic();
+      }
+    });
+
+    // ===== Завершение диагностики =====
+    function finishDiagnostic() {
+      screenTask.hidden = true;
+      screenResult.hidden = false;
+      resultScoreEl.textContent = correctCount;
+
+      // Событие diagnostic_complete
+      if (typeof sendEvent === 'function') {
+        sendEvent('diagnostic_complete', {
+          subject: currentSubject,
+          score: correctCount
+        });
+      }
+
+      // Разбор каждого задания
+      const tasks = TASKS[currentSubject];
+      reviewListEl.innerHTML = '';
+      tasks.forEach(function (task, i) {
+        const answer = answers[i];
+        const card = document.createElement('div');
+        card.className = 'card';
+        card.innerHTML =
+          '<p class="card__text"><strong>Задание ' + (i + 1) + '.</strong> ' + task.q + '</p>' +
+          '<p class="card__text">Ваш ответ: <strong>' + (answer.userAnswer || '—') + '</strong> ' +
+          (answer.correct ? '✅' : '❌') + '</p>' +
+          '<p class="card__text mb-0">Правильный ответ: <strong>' + task.a + '</strong></p>';
+        reviewListEl.appendChild(card);
+      });
+    }
+
+    // ===== Копирование промокода =====
+    document.getElementById('btn-copy-promo').addEventListener('click', function () {
+      const code = 'BALL10';
+      if (navigator.clipboard) {
+        navigator.clipboard.writeText(code).then(function () {
+          document.getElementById('btn-copy-promo').textContent = 'Скопировано!';
+          setTimeout(function () {
+            document.getElementById('btn-copy-promo').textContent = 'Скопировать промокод';
+          }, 2000);
+        });
+      } else {
+        alert('Промокод: ' + code);
+      }
+    });
+  </script>
+</body>
+</html>

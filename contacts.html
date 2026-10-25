@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Записаться на пробный ЕГЭ — Высший балл</title>
+  <meta name="description" content="Запишитесь на бесплатный пробный ЕГЭ 13 декабря 2026 с разбором результатов. Форма регистрации и контакты центра «Высший балл».">
+  <meta property="og:title" content="Записаться на пробный ЕГЭ — Высший балл">
+  <meta property="og:description" content="Бесплатный пробный ЕГЭ 13 декабря 2026 с разбором. Форма регистрации.">
+  <meta property="og:image" content="https://example.vercel.app/img/og-cover.jpg">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX');
+  </script>
+</head>
+<body>
+
+  <header class="header">
+    <div class="container header__inner">
+      <a href="index.html" class="header__logo">
+        <img src="img/logo.svg" alt="Высший балл" width="120" height="40">
+      </a>
+      <nav class="header__nav" aria-label="Основное меню">
+        <a href="index.html" class="header__link">Главная</a>
+        <a href="subjects.html" class="header__link">Предметы</a>
+        <a href="teachers.html" class="header__link">Преподаватели</a>
+        <a href="results.html" class="header__link">Результаты</a>
+        <a href="prices.html" class="header__link">Цены</a>
+        <a href="contacts.html" class="header__link active">Контакты</a>
+      </nav>
+      <a href="tel:+74951234567" class="header__phone"
+         data-event="contact_click" data-contact-type="phone">
+        +7 (495) 123-45-67
+      </a>
+      <button class="header__burger" aria-label="Открыть меню">☰</button>
+    </div>
+  </header>
+
+  <section class="section">
+    <div class="container">
+      <h1>Регистрация на пробный ЕГЭ</h1>
+      <p>Пробный ЕГЭ пройдёт <strong>13 декабря 2026 года</strong>. Регистрация открыта с 1 ноября. Участие бесплатное, с разбором результатов.</p>
+
+      <!-- ФОРМА -->
+      <form class="form" id="lead-form" novalidate>
+
+        <div class="form__field">
+          <label class="form__label" for="name">Имя и фамилия *</label>
+          <input class="form__input" type="text" id="name" name="name"
+                 minlength="2" maxlength="60" required
+                 autocomplete="name" placeholder="Иван Петров">
+          <span class="form__error" data-error-for="name"></span>
+        </div>
+
+        <div class="form__field">
+          <label class="form__label" for="phone">Телефон *</label>
+          <input class="form__input" type="tel" id="phone" name="phone"
+                 required autocomplete="tel" placeholder="+7 (999) 123-45-67">
+          <span class="form__error" data-error-for="phone"></span>
+        </div>
+
+        <div class="form__field">
+          <label class="form__label" for="email">E-mail</label>
+          <input class="form__input" type="email" id="email" name="email"
+                 autocomplete="email" placeholder="ivan@example.com">
+          <span class="form__error" data-error-for="email"></span>
+        </div>
+
+        <div class="form__field">
+          <label class="form__label" for="lead_role">Кто оставляет заявку *</label>
+          <select class="form__select" id="lead_role" name="lead_role" required>
+            <option value="">— выберите —</option>
+            <option value="student">Ученик</option>
+            <option value="parent">Родитель</option>
+          </select>
+          <span class="form__error" data-error-for="lead_role"></span>
+        </div>
+
+        <div class="form__field">
+          <label class="form__label" for="subject">Предмет *</label>
+          <select class="form__select" id="subject" name="subject" required>
+            <option value="">— выберите —</option>
+            <option value="math_profile">Математика (профиль)</option>
+            <option value="math_base">Математика (база)</option>
+            <option value="russian">Русский язык</option>
+            <option value="informatics">Информатика</option>
+            <option value="social">Обществознание</option>
+            <option value="physics">Физика</option>
+            <option value="english">Английский язык</option>
+          </select>
+          <span class="form__error" data-error-for="subject"></span>
+        </div>
+
+        <div class="form__field">
+          <label class="form__label" for="grade">Класс *</label>
+          <select class="form__select" id="grade" name="grade" required>
+            <option value="">— выберите —</option>
+            <option value="9">9 класс</option>
+            <option value="10">10 класс</option>
+            <option value="11">11 класс</option>
+            <option value="graduate">Выпускник прошлых лет</option>
+          </select>
+          <span class="form__error" data-error-for="grade"></span>
+        </div>
+
+        <!-- Флажок "Мне есть 18 лет" (показывается только для ученика) -->
+        <div class="form__field" id="adult-field" hidden>
+          <label class="form__checkbox">
+            <input type="checkbox" id="adult" name="adult">
+            <span>Мне есть 18 лет</span>
+          </label>
+          <span class="form__error" data-error-for="adult"></span>
+        </div>
+
+        <!-- Флажок согласия на обработку ПД -->
+        <div class="form__field">
+          <label class="form__checkbox">
+            <input type="checkbox" id="consent" name="consent" required>
+            <span>Я согласен(на) на обработку персональных данных в соответствии с
+              <a href="privacy.html" target="_blank">политикой конфиденциальности</a></span>
+          </label>
+          <span class="form__error" data-error-for="consent"></span>
+        </div>
+
+        <button type="submit" class="btn btn--primary" id="submit-btn">
+          Записаться на пробник
+        </button>
+
+        <p class="form__error" id="form-global-error"></p>
+      </form>
+    </div>
+  </section>
+
+  <!-- МЕССЕНДЖЕРЫ -->
+  <section class="section section--light">
+    <div class="container">
+      <h2>Написать в мессенджер</h2>
+      <div class="grid">
+        <a href="https://t.me/vysshiy_ball_nabor" target="_blank" rel="noopener"
+           class="card card--clickable"
+           data-event="messenger_click" data-messenger="telegram">
+          <h3 class="card__title">Telegram</h3>
+          <p class="card__text mb-0">@vysshiy_ball_nabor</p>
+        </a>
+        <a href="https://wa.me/74951234567" target="_blank" rel="noopener"
+           class="card card--clickable"
+           data-event="messenger_click" data-messenger="whatsapp">
+          <h3 class="card__title">WhatsApp</h3>
+          <p class="card__text mb-0">+7 (495) 123-45-67</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div>
+        <h4 class="footer__title">Высший балл</h4>
+        <p>Центр подготовки к ЕГЭ и ОГЭ с 2017 года.</p>
+      </div>
+      <div>
+        <h4 class="footer__title">Контакты</h4>
+        <p>
+          <a href="tel:+74951234567" data-event="contact_click" data-contact-type="phone">+7 (495) 123-45-67</a><br>
+          <a href="mailto:nabor@vysshiy-ball.example" data-event="contact_click" data-contact-type="email">nabor@vysshiy-ball.example</a>
+        </p>
+      </div>
+      <div>
+        <h4 class="footer__title">Соцсети</h4>
+        <div class="footer__social">
+          <a href="https://instagram.com/vysshiy_ball_ege" target="_blank" rel="noopener"
+             data-event="social_click" data-network="instagram" data-page-section="footer">Instagram</a>
+          <a href="https://vk.com/vysshiy_ball" target="_blank" rel="noopener"
+             data-event="social_click" data-network="vk" data-page-section="footer">ВКонтакте</a>
+          <a href="https://t.me/vysshiy_ball" target="_blank" rel="noopener"
+             data-event="social_click" data-network="telegram" data-page-section="footer">Telegram</a>
+          <a href="https://youtube.com/@vysshiy_ball" target="_blank" rel="noopener"
+             data-event="social_click" data-network="youtube" data-page-section="footer">YouTube</a>
+        </div>
+      </div>
+      <div>
+        <h4 class="footer__title">Документы</h4>
+        <p><a href="privacy.html">Политика конфиденциальности</a></p>
+      </div>
+    </div>
+    <div class="container">
+      <p class="footer__copy">© 2026 АНО ДО «Высший балл». Все права защищены.</p>
+    </div>
+  </footer>
+
+  <!-- Скрипты -->
+  <script src="js/analytics.js"></script>
+  <script src="js/form.js"></script>
+</body>
+</html>
