@@ -216,7 +216,8 @@ async function onSubmit(e) {
     sendEvent('generate_lead', {
       lead_subject: data.subject,
       lead_role: data.lead_role,
-      lead_source: data.utm_source || 'direct'
+      lead_source: data.utm_source || 'direct',
+      conversion: true
     });
     
     window.location.href = 'thanks.html';
