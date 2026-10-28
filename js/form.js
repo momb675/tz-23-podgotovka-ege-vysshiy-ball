@@ -1,5 +1,5 @@
 // 1. ЗАМЕНИ на URL своего веб-приложения Apps Script
-const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/ВАШ_ID/exec';
+const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyQXMXM5yMaDshZdMs_1RlDcml7nDGD6pPPM-uPrOcRHd5ZlnQxwop3lsXkM5arB-s5IQ/exec';
 
 // 2. Ключи UTM, которые сохраняем
 const UTM_KEYS = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content'];
