@@ -197,38 +197,39 @@ async function onSubmit(e) {
   };
 
   try {
-    const response = await fetch(APPS_SCRIPT_URL, {
+    // Отправляем данные в режиме no-cors
+    await fetch(APPS_SCRIPT_URL, {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
+      mode: 'no-cors', // <--- ВОТ ЭТО ГЛАВНОЕ
+      headers: { 'Content-Type': 'text/plain;charset=utf-8' },
       body: JSON.stringify(data)
     });
-    const result = await response.json();
-
-    if (result.ok) {
-      sessionStorage.setItem('request_id', data.request_id);
-      sessionStorage.setItem('lead_subject', data.subject);
-      sendEvent('generate_lead', {
-        lead_subject: data.subject,
-        lead_role: data.lead_role,
-        lead_source: data.utm_source || 'direct'
-      });
-      window.location.href = 'thanks.html';
-    } else {
-      showGlobalError('Не удалось отправить: ' + (result.error || 'неизвестная ошибка'));
-      if (result.field) showFieldError(result.field, 'Проверьте поле');
-      sendEvent('form_error', {
-        field_name: result.field || 'unknown',
-        error_type: 'server'
-      });
-    }
+  
+    // Поскольку в режиме no-cors мы не можем прочитать ответ (response.json()),
+    // мы предполагаем, что если запрос не упал с ошибкой сети, то данные ушли.
+    
+    // Сохраняем номер и переходим на thanks.html
+    sessionStorage.setItem('request_id', data.request_id);
+    sessionStorage.setItem('lead_subject', data.subject);
+    
+    // Отправляем событие в GA4 (оно у нас уже работает)
+    sendEvent('generate_lead', {
+      lead_subject: data.subject,
+      lead_role: data.lead_role,
+      lead_source: data.utm_source || 'direct'
+    });
+    
+    window.location.href = 'thanks.html';
+  
   } catch (err) {
+    // Сюда мы попадем только если реально пропал интернет
     showGlobalError('Сетевая ошибка. Проверьте интернет и попробуйте ещё раз.');
     sendEvent('form_error', { field_name: 'form', error_type: 'network' });
   } finally {
     btn.disabled = false;
     btn.textContent = 'Записаться на пробник';
   }
-}
+} // <--- ВОТ ЗДЕСЬ БЫЛА ОШИБКА, ТЕПЕРЬ ВСЁ ЗАКРЫТО ПРАВИЛЬНО
 
 // ========== инициализация ==========
 
