@@ -230,7 +230,7 @@ async function onSubmit(e) {
     btn.disabled = false;
     btn.textContent = 'Записаться на пробник';
   }
-} // <--- ВОТ ЗДЕСЬ БЫЛА ОШИБКА, ТЕПЕРЬ ВСЁ ЗАКРЫТО ПРАВИЛЬНО
+} 
 
 // ========== инициализация ==========
 
@@ -240,5 +240,5 @@ document.addEventListener('DOMContentLoaded', function () {
   const form = document.getElementById('lead-form');
   if (form) form.addEventListener('submit', onSubmit);
 
-  // При первом взаимодействии с формой GA4 сам отправит form_start
+
 });
